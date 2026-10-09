@@ -1,0 +1,30 @@
+banditcamp|WO|Ransacked Village|5|W
+banditcamp|WO|Sawmill|5|NW
+banditcamp|WO|Abandoned Village|5|SW
+banditcamp|WO|Ford|5|S
+banditcamp|WO|Ransacked Village|5|NW
+banditcamp|WO|Cackler Bridge|5|NW
+banditcamp|V|Crow's Perch|7|NW
+banditcamp|V|Hangman's Alley|5|S
+banditcamp|V|Coast of Wrecks|7|NE
+banditcamp|V|Refugees' Camp|9|SW
+banditcamp|V|Midcopse|9|NW
+banditcamp|V|Midcopse|9|W
+banditcamp|V|Lindenvale|9|NE
+banditcamp|V|Lindenvale|7|E
+banditcamp|V|Stonecutters' Settlement|9|S
+banditcamp|V|Lurtch|9|NE
+banditcamp|V|Benek|9|SW
+banditcamp|V|Road to Bald Mountain|9|NW
+banditcamp|V|Inn at the Crossroads|7|NW
+banditcamp|V|Devil's Pit|9|
+banditcamp|V|Widows' Grotto|9|E
+banditcamp|V|Alness|4|NE
+banditcamp|V|Crossroads|9|S
+banditcamp|V|Crane Cape|9|E
+banditcamp|S|Old Watchtower|14|
+banditcamp|S|Whale Graveyard|13|
+banditcamp|S|Giants' Toes|13|N
+banditcamp|S|Kaer Muire|18|NW
+banditcamp|S|Rannvaig|14|E
+banditcamp|S|Urialla Harbor|14|FAR

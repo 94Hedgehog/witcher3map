@@ -1,0 +1,564 @@
+[
+ {
+  "id": "w2",
+  "quest": "Imperial Audience",
+  "title": "Simulácia Witcher 2",
+  "act": "Prológ",
+  "text": "Ak si na začiatku zapol simuláciu W2 save, Morvran Voorhis sa ťa spýta na udalosti z dvojky. Ovplyvní to drobnosti (Letho → quest Ghosts of the Past, Síle v The Great Escape, Carduin v Oxenfurte).",
+  "options": [
+   {
+    "id": "letho",
+    "label": "Letho ušetrený",
+    "note": "Odomkne Ghosts of the Past"
+   },
+   {
+    "id": "default",
+    "label": "Default / nezáleží",
+    "note": ""
+   }
+  ],
+  "rec": "Letho ušetrený – dostaneš navyše quest s ním."
+ },
+ {
+  "id": "baron_inn",
+  "quest": "Bloody Baron",
+  "title": "Baronovi muži v hostinci",
+  "act": "Akt I",
+  "text": "Keď prídu baronovi muži do Inn at the Crossroads, môžeš sa biť alebo to vyriešiť slovne.",
+  "options": [
+   {
+    "id": "peace",
+    "label": "Bez boja",
+    "note": "Do Crow's Perch pustia hlavnou bránou"
+   },
+   {
+    "id": "fight",
+    "label": "Bitka",
+    "note": "Musíš hľadať inú cestu do pevnosti"
+   }
+  ],
+  "rec": "Bez boja – jednoduchšie, nič nestratíš."
+ },
+ {
+  "id": "anabelle",
+  "quest": "A Towerful of Mice",
+  "title": "Anabelle a Graham",
+  "act": "Akt I",
+  "text": "Na Fyke Isle sa rozhoduješ, či kosti odnesieš Grahamovi, alebo privedieš Grahama za ňou.",
+  "options": [
+   {
+    "id": "bring_graham",
+    "label": "Priviesť Grahama na ostrov",
+    "note": "Kliatba sa zlomí, obaja zomrú spolu"
+   },
+   {
+    "id": "bones",
+    "label": "Odniesť kosti Grahamovi",
+    "note": "Graham zomrie, Pesta je voľná"
+   }
+  ],
+  "rec": "Priviesť Grahama – aspoň trochu lepší koniec. Kľúč: celú vežu poriadne prehľadaj s lampou."
+ },
+ {
+  "id": "keira",
+  "quest": "For the Advancement of Learning",
+  "title": "Osud Keiry Metz",
+  "act": "Akt I",
+  "important": true,
+  "text": "Na konci Keirinej questline ju nájdeš na Fyke Isle s Alexandrovými poznámkami. Výsledok závisí od celého rozhovoru, nie od jednej vety.",
+  "options": [
+   {
+    "id": "km",
+    "label": "Poslať do Kaer Morhen",
+    "note": "Pomôže v bitke o Kaer Morhen (istota, že Lambert prežije)"
+   },
+   {
+    "id": "radovid",
+    "label": "Nechať ísť (k Radovidovi)",
+    "note": "Zomrie, odomkne A Final Kindness"
+   },
+   {
+    "id": "kill",
+    "label": "Boj",
+    "note": "Keira zomrie hneď"
+   }
+  ],
+  "rec": "Poslať do Kaer Morhen – buď diplomatický, nesiahaj po poznámkach silou, neurážaj ju."
+ },
+ {
+  "id": "hillock",
+  "quest": "The Whispering Hillock",
+  "title": "Duch v strome",
+  "act": "Akt I",
+  "important": true,
+  "text": "Zabiť ducha, alebo ho oslobodiť. Pri oslobodení záleží aj na tom, či si predtým hovoril s Ealdormanom v Downwarrene.",
+  "options": [
+   {
+    "id": "kill",
+    "label": "Zabiť ducha",
+    "note": "Downwarren prežije, siroty si vezmú Crones, Anna zošalie ale žije"
+   },
+   {
+    "id": "free_after",
+    "label": "Oslobodiť (po Ealdormanovi)",
+    "note": "Siroty zachránené, Downwarren zničený, Anna a Baron tragicky"
+   },
+   {
+    "id": "free_before",
+    "label": "Oslobodiť (pred Ealdormanom)",
+    "note": "Anna sa nezmení na hag, ale siroty v skutočnosti nezachránené"
+   }
+  ],
+  "rec": "Bez jednoznačne dobrej voľby. Najviac ľudí prežije pri zabití ducha."
+ },
+ {
+  "id": "sarah",
+  "quest": "Novigrad Dreaming",
+  "title": "Godling Sarah",
+  "act": "Akt I",
+  "text": "V strašidelnom dome nájdeš godlingu Sarah, ktorá posiela spiacemu nočné mory.",
+  "options": [
+   {
+    "id": "help",
+    "label": "Pomôcť Sarah",
+    "note": "Ostane v dome, spriatelí sa so spiacou"
+   },
+   {
+    "id": "evict",
+    "label": "Vyhnať ju",
+    "note": "Presťahuje sa na Bald Mountain"
+   }
+  ],
+  "rec": "Pomôcť Sarah."
+ },
+ {
+  "id": "menge",
+  "quest": "Count Reuven's Treasure",
+  "title": "Výsluch u Mengeho",
+  "act": "Akt I",
+  "important": true,
+  "text": "S Triss ako návnadou sa dostaneš k Caleb Mengemu. Ak sa ho spýtaš na Dijkstrov poklad, získaš kľúč a lokáciu a Dijkstra potom financuje obranu Kaer Morhen.",
+  "options": [
+   {
+    "id": "ask",
+    "label": "Spýtať sa na poklad",
+    "note": "Dijkstra pomôže v bitke o Kaer Morhen"
+   },
+   {
+    "id": "noask",
+    "label": "Nespýtať sa",
+    "note": "Bez Dijkstrovej podpory"
+   }
+  ],
+  "rec": "Spýtaj sa na poklad."
+ },
+ {
+  "id": "mages",
+  "quest": "Now or Never",
+  "title": "Mágovia a Triss",
+  "act": "Akt I",
+  "important": true,
+  "text": "Dve rozhodnutia: či pomôžeš mágom utiecť z Novigradu, a či povieš Triss, že ju miluješ. Opustenie mágov zamkne A Deadly Plot aj romancu s Triss.",
+  "options": [
+   {
+    "id": "help_love",
+    "label": "Pomôcť + „milujem ťa“",
+    "note": "Romanca s Triss"
+   },
+   {
+    "id": "help_no",
+    "label": "Pomôcť, bez vyznania",
+    "note": "Triss odíde"
+   },
+   {
+    "id": "abandon",
+    "label": "Nepomôcť mágom",
+    "note": "Zamkne A Deadly Plot → Radovid vyhrá vojnu"
+   }
+  ],
+  "rec": "Pomôcť mágom vždy. Vyznanie podľa toho, koho chceš (Triss vs. Yen)."
+ },
+ {
+  "id": "assassins",
+  "quest": "A Deadly Plot",
+  "title": "Atentátnicke questy (1/3)",
+  "act": "Akt I",
+  "important": true,
+  "text": "A Deadly Plot, An Eye for an Eye a Redania's Most Wanted musíš spraviť všetky tri. Inak sa v Akte III nedá spustiť Reason of State a Radovid vyhrá vojnu.",
+  "options": [
+   {
+    "id": "done",
+    "label": "Splnené všetky 3",
+    "note": ""
+   },
+   {
+    "id": "skip",
+    "label": "Niektorý vynechaný",
+    "note": "Radovid vyhrá vojnu, Temeria zanikne"
+   }
+  ],
+  "rec": "Sprav všetky tri pred The Isle of Mists."
+ },
+ {
+  "id": "lastwish",
+  "quest": "The Last Wish",
+  "title": "Yennefer",
+  "act": "Akt I",
+  "important": true,
+  "text": "Na konci questu sa rozhoduješ, či Yennefer povieš, že ju stále miluješ. Bez tohto questu romanca s Yen nie je.",
+  "options": [
+   {
+    "id": "love",
+    "label": "Stále ju milujem",
+    "note": "Romanca s Yen"
+   },
+   {
+    "id": "no",
+    "label": "Nechcem byť s ňou",
+    "note": "Yen uzavretá"
+   }
+  ],
+  "rec": "Vyber si jednu – Triss alebo Yen. Obe naraz = na konci skončíš sám."
+ },
+ {
+  "id": "possession",
+  "quest": "Possession",
+  "title": "Cerys a Hym",
+  "act": "Akt I",
+  "important": true,
+  "text": "Pomoc Cerys je podmienka pre King's Gambit. Musí byť hotové pred Aktom III, inak quest zlyhá.",
+  "options": [
+   {
+    "id": "done",
+    "label": "Splnené",
+    "note": ""
+   },
+   {
+    "id": "skip",
+    "label": "Vynechané",
+    "note": "Kráľom bude Svanrige"
+   }
+  ],
+  "rec": "Sprav pred The Isle of Mists."
+ },
+ {
+  "id": "undvik",
+  "quest": "The Lord of Undvik",
+  "title": "Hjalmar a ľadový obor",
+  "act": "Akt I",
+  "important": true,
+  "text": "Druhá podmienka pre King's Gambit. Tiež musí byť hotové pred Aktom III.",
+  "options": [
+   {
+    "id": "done",
+    "label": "Splnené",
+    "note": ""
+   },
+   {
+    "id": "skip",
+    "label": "Vynechané",
+    "note": "Kráľom bude Svanrige"
+   }
+  ],
+  "rec": "Sprav pred The Isle of Mists."
+ },
+ {
+  "id": "gambit",
+  "quest": "King's Gambit",
+  "title": "Kto bude vládnuť Skellige",
+  "act": "Akt I",
+  "important": true,
+  "text": "Po Possession a The Lord of Undvik pomáhaš Cerys alebo Hjalmarovi odhaliť útok na hostine.",
+  "options": [
+   {
+    "id": "cerys",
+    "label": "Cerys",
+    "note": "Kráľovná, Skellige prosperuje"
+   },
+   {
+    "id": "hjalmar",
+    "label": "Hjalmar",
+    "note": "Kráľ, viac nájazdov, viac obetí"
+   },
+   {
+    "id": "none",
+    "label": "Nikto / vynechané",
+    "note": "Svanrige"
+   }
+  ],
+  "rec": "Cerys – najlepší výsledok pre Skellige."
+ },
+ {
+  "id": "mists",
+  "quest": "The Isle of Mists",
+  "title": "Point of no return",
+  "act": "Akt II",
+  "important": true,
+  "checkpoint": true,
+  "text": "Po spustení tohto questu sa časť questov zamkne alebo zlyhá. Pred ním dokonči všetko označené „do: The Isle of Mists“ v zozname.",
+  "options": [],
+  "rec": "Pred The Isle of Mists prejdi filter Deadline a vyčisti ho."
+ },
+ {
+  "id": "botb_snow",
+  "quest": "Blood on the Battlefield",
+  "title": "Ciri po bitke",
+  "act": "Akt II",
+  "important": true,
+  "ciri": true,
+  "text": "Ako rozveseliť Ciri.",
+  "options": [
+   {
+    "id": "snow",
+    "label": "Guľovačka",
+    "note": "+1 pre Ciri",
+    "ciri": 1
+   },
+   {
+    "id": "drink",
+    "label": "Pitie",
+    "note": "−1 pre Ciri",
+    "ciri": -1
+   }
+  ],
+  "rec": "Guľovačka."
+ },
+ {
+  "id": "botb_emhyr",
+  "quest": "Blood on the Battlefield",
+  "title": "Ísť s Ciri za Emhyrom?",
+  "act": "Akt II",
+  "important": true,
+  "ciri": true,
+  "text": "Rozhoduje, či Ciri môže skončiť ako cisárovná. Ak ideš a Emhyr ponúkne odmenu, odmietnutie je plus.",
+  "options": [
+   {
+    "id": "go_refuse",
+    "label": "Ísť, odmietnuť odmenu",
+    "note": "+1, cesta k cisárovnej otvorená",
+    "ciri": 1,
+    "emhyr": true
+   },
+   {
+    "id": "go_accept",
+    "label": "Ísť, prijať odmenu",
+    "note": "−1, cesta k cisárovnej otvorená",
+    "ciri": -1,
+    "emhyr": true
+   },
+   {
+    "id": "skip",
+    "label": "Nejsť",
+    "note": "Ciri nemôže byť cisárovná",
+    "emhyr": false
+   }
+  ],
+  "rec": "Ísť a odmietnuť – drží otvorené obe dobré konce."
+ },
+ {
+  "id": "finalprep",
+  "quest": "Final Preparations",
+  "title": "Ciri a Lodge",
+  "act": "Akt III",
+  "important": true,
+  "ciri": true,
+  "text": "Ciri ide na stretnutie s Lodge of Sorceresses.",
+  "options": [
+   {
+    "id": "alone",
+    "label": "Nech ide sama",
+    "note": "+1 pre Ciri",
+    "ciri": 1
+   },
+   {
+    "id": "with",
+    "label": "Ísť s ňou",
+    "note": "−1 pre Ciri",
+    "ciri": -1
+   }
+  ],
+  "rec": "Nech ide sama."
+ },
+ {
+  "id": "dijkstra",
+  "quest": "Blindingly Obvious",
+  "title": "Dijkstra",
+  "act": "Akt III",
+  "important": true,
+  "text": "Byť s Dijkstrom diplomatický, alebo sa s ním pobiť. Boj zamkne Reason of State.",
+  "options": [
+   {
+    "id": "diplo",
+    "label": "Diplomaticky",
+    "note": "Ponúkne Reason of State (ak máš atentátnicke questy)"
+   },
+   {
+    "id": "fight",
+    "label": "Bitka",
+    "note": "Radovid vyhrá vojnu"
+   }
+  ],
+  "rec": "Diplomaticky."
+ },
+ {
+  "id": "reason",
+  "quest": "Reason of State",
+  "title": "Kto vyhrá vojnu",
+  "act": "Akt III",
+  "important": true,
+  "text": "Po atentáte na Radovida sa Dijkstra obráti proti Roche, Ves a Thalerovi.",
+  "options": [
+   {
+    "id": "roche",
+    "label": "Brániť Rocheho, Ves, Thalera",
+    "note": "Nilfgaard vyhrá, Temeria ako vazal",
+    "war": "nilfgaard"
+   },
+   {
+    "id": "dijkstra",
+    "label": "Nechať Dijkstru",
+    "note": "Sever pod Dijkstrom vyhrá",
+    "war": "dijkstra"
+   },
+   {
+    "id": "skip",
+    "label": "Quest nerobiť / zamknutý",
+    "note": "Radovid vyhrá",
+    "war": "radovid"
+   }
+  ],
+  "rec": "Brániť Rocheho – Temeria prežije a otvára cestu k Ciri cisárovnej."
+ },
+ {
+  "id": "elderblood",
+  "quest": "Child of the Elder Blood",
+  "title": "Avallac'hovo laboratórium",
+  "act": "Akt III",
+  "important": true,
+  "ciri": true,
+  "text": "Ciri chce v laboratóriu všetko rozbiť.",
+  "options": [
+   {
+    "id": "smash",
+    "label": "Nech sa vybije",
+    "note": "+1 pre Ciri",
+    "ciri": 1
+   },
+   {
+    "id": "calm",
+    "label": "Upokojiť ju",
+    "note": "−1 pre Ciri",
+    "ciri": -1
+   }
+  ],
+  "rec": "Nech sa vybije."
+ },
+ {
+  "id": "skjall",
+  "quest": "Skjall's Grave",
+  "title": "Skjallov hrob",
+  "act": "Akt III",
+  "important": true,
+  "ciri": true,
+  "text": "Ciri chce pochovať Skjalla.",
+  "options": [
+   {
+    "id": "go",
+    "label": "Ísť s ňou",
+    "note": "+1 pre Ciri",
+    "ciri": 1
+   },
+   {
+    "id": "no",
+    "label": "Nie je čas",
+    "note": "−1 pre Ciri",
+    "ciri": -1
+   }
+  ],
+  "rec": "Ísť s ňou."
+ },
+ {
+  "id": "olgierd",
+  "quest": "Whatsoever a Man Soweth",
+  "title": "Olgierd vs. Gaunter O'Dimm",
+  "act": "Hearts of Stone",
+  "important": true,
+  "text": "Aby si mohol Olgierda zachrániť, musíš najprv ísť za Shani (Temple Isle, prof. Shakeslock) a až potom do chrámu. Potom porazíš O'Dimma v hádanke.",
+  "options": [
+   {
+    "id": "save",
+    "label": "Zachrániť Olgierda",
+    "note": "Cez Shani + hádanka"
+   },
+   {
+    "id": "boon",
+    "label": "Nechať ho O'Dimmovi",
+    "note": "Dostaneš odmenu od O'Dimma"
+   }
+  ],
+  "rec": "Zachrániť Olgierda."
+ },
+ {
+  "id": "fangs",
+  "quest": "The Night of Long Fangs",
+  "title": "Damien alebo Orianna",
+  "act": "Blood and Wine",
+  "important": true,
+  "text": "Damien vedie ku Syanne (cesta k najlepšiemu koncu). Orianna vedie k Unseen Elder a oba sestry zomrú. Zamknuté je to až pri knihe Land of a Thousand Fables alebo pri rozhovore s Regisom v dokoch.",
+  "options": [
+   {
+    "id": "damien",
+    "label": "Damien → Syanna",
+    "note": "Beyond Hill and Dale"
+   },
+   {
+    "id": "orianna",
+    "label": "Orianna → Unseen Elder",
+    "note": "Obe sestry zomrú"
+   }
+  ],
+  "rec": "Damien."
+ },
+ {
+  "id": "syanna",
+  "quest": "Beyond Hill and Dale...",
+  "title": "Syanna v Rozprávkovej krajine",
+  "act": "Blood and Wine",
+  "important": true,
+  "text": "Tri veci pre najlepší koniec: prečítaj celý denník vychovávateľky, vypočuj si Syannin príbeh a získaj jej stuhu od Little Flint Girl (kúpiť alebo vyhrať v gwente).",
+  "options": [
+   {
+    "id": "all",
+    "label": "Denník + príbeh + stuha",
+    "note": "Možnosť zachrániť obe sestry"
+   },
+   {
+    "id": "noribbon",
+    "label": "Bez stuhy",
+    "note": "Syanna zomrie, Dettlaff môže prežiť"
+   }
+  ],
+  "rec": "Splň všetky tri."
+ },
+ {
+  "id": "pomp",
+  "quest": "Pomp and Strange Circumstance",
+  "title": "Posledná vražda",
+  "act": "Blood and Wine",
+  "important": true,
+  "text": "Vyšetri s Regisom cieľ poslednej vraždy, potom hovor so Syannou. Kľúčové repliky: že sa jej sestra otočila chrbtom a či niekedy uvažovala o odpustení.",
+  "options": [
+   {
+    "id": "best",
+    "label": "Vyšetriť + správne repliky",
+    "note": "Obe sestry žijú"
+   },
+   {
+    "id": "skip",
+    "label": "Nevyšetrovať",
+    "note": "Anna Henrietta zomrie"
+   }
+  ],
+  "rec": "Vyšetriť."
+ }
+]

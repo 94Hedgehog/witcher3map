@@ -1,0 +1,10 @@
+monsterden|V|Dragonslayers' Grotto|11|
+monsterden|V|Hanged Man's Tree|6|NW
+monsterden|V|Ursten|18|E
+monsterden|V|Cavern|5|
+monsterden|S|Kaer Gelen|23|NE
+monsterden|S|Kaer Gelen|29|
+monsterden|S|Harviken|5|E
+monsterden|S|Trottheim|5|S
+monsterden|S|Fornhala|12|E
+monsterden|S|Rogne|29|NW

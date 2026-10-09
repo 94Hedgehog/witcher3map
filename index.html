@@ -1,67 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Witcher 3 Interactive Maps</title>
-		<link rel="icon" type="image/ico" href="files/images/icons/witcher3.ico?"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-		<meta property="og:title" content="Witcher 3 Interactive Maps" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://witcher3map.com/" />
-		<meta property="og:image" content="files/images/icons/witcher3.ico" />
-		<meta property="og:description" content="Witcher 3 interactive maps. All locations including shopkeepers, gwent players, merchants, places of power" />
-		<meta name="description" content="Witcher 3 interactive maps. All locations including shopkeepers, gwent players, merchants, places of power" />
-		<meta name="keywords" content="Witcher 3, Witcher 3 map, Witcher 3 interactive map, gwent player map, gwent map, shopkeeper map, merchant map" />
-		<link type="text/css" rel="stylesheet" href="files/styles/home.min.css" />
-		<link type="text/css" rel="stylesheet" href="files/styles/font-awesome.min.css" />
-		<link type="text/css" rel="stylesheet" href="files/styles/leaflet.min.css" />
-		<script type="text/javascript" src="files/scripts/fuse.js"></script>
-		<script type="text/javascript" src="files/scripts/jquery-3.6.0.min.js"></script>
-		<script type="text/javascript" src="files/scripts/vendor.bundle.js"></script>
-		<script type="text/javascript" src="files/scripts/jquery.ddslick.min.js"></script>
-		<script type="text/javascript" src="files/scripts/lang-global.js"></script>
-		<script type="text/javascript" src="files/scripts/home.js"></script>
-	</head>
-	<body>
-		<div id="online">">
-			<!--<li class="enabled"><a href="https://root-bb.github.io/witcher3map/" data-i18n="home.online">Online Map</a></li>-->
-			<li class="enabled"><a href="https://www.nexusmods.com/witcher3/mods/6061/?tab=description" data-i18n="home.offline">Offline Map</a></li>
-		</div>
-		<div id="wrap">
-			<div id="wrap2">
-				<div id="content">
-					<div id="logo" ><center data-i18n="[html]misc.logo"><img src='files/images/logo/logo_en.png' class='center'></center></div>
-					<div id="text" data-i18n="[html]home.tagline">Unofficial The Witcher 3 Interactive Maps</div>
-					<div id="search-wrapper">
-						<div id="search-input-container"><div id="search-input-wrapper"><i class="fa fa-search"></i><input id="search" type="text" data-i18n="[placeholder]home.searchPlaceholder" placeholder="Enter search terms..." autocomplete="off" /><i id="clear" class="fa fa-times close-search"></i></div></div>
-						<div id="search-results-wrapper"><ul id="results"></ul></div>
-					</div>
-					<ul id="nav">
-						<li class="enabled"><a href="w/index.html" data-i18n="maps.white_orchard">White Orchard</a></li>
-						<li class="enabled"><a href="v/index.html" data-i18n="[html]maps.velen_main">Velen &amp; Novigrad</a></li>
-						<li class="enabled"><a href="g/index.html" data-i18n="[html]maps.gaunter_main">Gaunter's World</a></li>
-						<li class="enabled"><a href="s/index.html" data-i18n="maps.skellige">Skellige Isles</a></li>
-						<li class="enabled"><a href="k/index.html" data-i18n="maps.kaer_morhen">Kaer Morhen</a></li>
-						<li class="enabled"><a href="i/index.html" data-i18n="maps.isle_mists">Isle of Mists</a></li>
-						<li class="enabled"><a href="t/index.html" data-i18n="[html]maps.toussaint_main">Toussaint</a></li>
-						<li class="enabled"><a href="f/index.html" data-i18n="[html]maps.fables_main">Thousand Fables</a></li>
-					</ul>
-				</div>
-				<div id="lang-switcher"></div>
-			</div>
-		</div>
-		<div id="footer">
-			<span id="Credits"data-i18n="[html]credits.botCreated" data-i18n-options='{"untamed0":"<a href=https://github.com/untamed0>untamed0</a>","BaHTsIzBEdEvi":"<a href=https://github.com/root-BB>BaHTsIzBEdEvi</a>","license":"<a href=http://creativecommons.org/licenses/by-nc-sa/4.0>CC BY-NC-SA</a>"}'> </span>
-			<span data-i18n="[html]credits.botHelp" data-i18n-options='{"mcarver":"<a href=https://github.com/mcarver>mcarver</a>","Gerignak":"<a href=https://www.nexusmods.com/witcher3/users/44200822>Gerignak</a>","contributors":"<a href=https://github.com/untamed0/witcher3map/graphs/contributors>contributors</a>","designGears":"<a href=https://twitter.com/DesignGears>@DesignGears</a>","hhrhhr":"<a href=https://github.com/hhrhhr>hhrhhr</a>"}'> </span>
-			<span data-i18n="[html]credits.botAssets" data-i18n-options='{"cdpr":"<a href=https://en.cdprojektred.com>CD PROJEKT RED</a>"}'> </span>
-		</div>
-		<div id="footer2">
-			<span id="DonationBlock"><a id="Donation" href="https://www.paypal.com/paypalme/BaHTsIzBEdEvi1" target="_blank"><i class="donation"></i><span data-i18n="controls.donation">Donate A Cofee...</span></a></span>
-			<span id="Version">
-				<a id="Title" data-i18n="credits.version">Version </a>
-				<a id="No">4.04</a>
-			</span>
-		</div>
-	</body>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Witcher 3 – mapa a cesta</title>
+<link rel="icon" href="../files/images/icons/witcher3.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+  <section id="mapwrap" aria-label="Mapa">
+    <div id="map"></div>
+    <div id="mapbar">
+      <label class="sr" for="mapsel">Mapa</label>
+      <select id="mapsel"></select>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside id="panel" aria-label="Cesta a rozhodnutia">
+    <header id="phead">
+      <div class="ptitle">
+        <h1>Cesta</h1>
+        <label class="mylvl" title="Tvoj aktuálny level – podľa neho sa farbia otázniky">Môj level<input id="mylvl" type="number" min="1" max="100" inputmode="numeric" placeholder="–"></label>
+        <div id="progress" title="Hotové questy"><span id="pcount">0 / 0</span><div class="pbar"><i id="pfill"></i></div></div>
+      </div>
+      <button id="nextbtn" class="next" type="button">
+        <span class="nlab">Ďalej</span>
+        <span id="nextname" class="nname">—</span>
+        <span id="nextlvl" class="nlvl"></span>
+      </button>
+      <div id="warn" role="alert" hidden></div>
+      <nav id="tabs" role="tablist">
+        <button role="tab" data-tab="route" aria-selected="true">Poradie</button>
+        <button role="tab" data-tab="plan" aria-selected="false">Teraz</button>
+        <button role="tab" data-tab="dec" aria-selected="false">Rozhodnutia</button>
+        <button role="tab" data-tab="gwent" aria-selected="false">Zbierky</button>
+        <button role="tab" data-tab="layers" aria-selected="false">Mapa</button>
+      </nav>
+    </header>
+
+    <div id="tab-route" class="tab" role="tabpanel">
+      <div id="filters">
+        <input id="search" type="search" placeholder="Hľadať quest…" autocomplete="off">
+        <div id="typechips" class="chips"></div>
+        <div class="toggles">
+          <label><input type="checkbox" id="f-hidedone"> Skryť hotové</label>
+          <label><input type="checkbox" id="f-deadline"> Len s deadlinom</label>
+          <label><input type="checkbox" id="f-spoil"> Spoilery</label>
+        </div>
+      </div>
+      <ol id="route"></ol>
+    </div>
+
+    <div id="tab-plan" class="tab" role="tabpanel" hidden></div>
+
+    <div id="tab-dec" class="tab" role="tabpanel" hidden>
+      <div id="world"></div>
+      <div id="declist"></div>
+    </div>
+
+    <div id="tab-gwent" class="tab" role="tabpanel" hidden></div>
+
+    <div id="tab-layers" class="tab" role="tabpanel" hidden>
+      <div class="lbtns">
+        <button type="button" data-preset="explore">Otázniky a questy</button>
+        <button type="button" data-preset="all">Všetko</button>
+        <button type="button" data-preset="none">Nič</button>
+      </div>
+      <div class="lvbox">
+        <p class="lvleg"><b class="lv lv-ok">12</b> v pohode <b class="lv lv-a">15</b> o 1–4 vyššie <b class="lv lv-r">20</b> o 5+ vyššie <b class="lv lv-g">4</b> málo XP <b class="lv lv-n zone">32+</b> orientačne podľa oblasti</p>
+        <div class="lvf">
+          <label><input type="radio" name="lvf" value="all"> Všetky otázniky</label>
+          <label><input type="radio" name="lvf" value="near"> Len do môjho levelu +2</label>
+        </div>
+      </div>
+      <label class="lhide"><input type="checkbox" id="f-hidemk"> Skryť hotové markery</label>
+      <ul id="layers"></ul>
+      <p class="hint">Klik na marker otvorí detail. Pravý klik (na mobile dlhé podržanie) ho označí ako hotový. Pravý klik na prázdne miesto mapy pridá <b>vlastný pin</b> s poznámkou.</p>
+      <div class="backup">
+        <button type="button" id="exportbtn">Stiahnuť zálohu postupu</button>
+        <label class="filebtn">Načítať zálohu<input type="file" id="importfile" accept="application/json"></label>
+      </div>
+      <p class="credits">Gwint: karty a zdroje z Gwent Cards hárku XLSX. Levely otáznikov: game-checklists.com (spárované cez signposty). Mapa a markery: <a href="https://github.com/tiva85/witcher3map" target="_blank" rel="noopener">tiva85/witcher3map</a> (untamed0, BaHTsIzBEdEvi), CC BY-NC-SA 4.0. Poradie questov: Witcher 3 Optimal Quest Order Guide (ChrisRi, xLetalis). Hra a grafika © CD PROJEKT RED.</p>
+    </div>
+  </aside>
+</div>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
 </html>

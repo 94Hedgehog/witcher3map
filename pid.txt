@@ -1,0 +1,7 @@
+pid|V|Hangman's Alley|6|SW
+pid|V|Hanged Man's Tree|9|
+pid|V|Lindenvale|16|N
+pid|V|Bandits' Camp|5|
+pid|V|Crossroads|9|W
+pid|S|Blandare|13|S
+pid|S|Sund|14|

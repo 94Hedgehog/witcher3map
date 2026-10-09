@@ -1,0 +1,75 @@
+guarded|WO|Ransacked Village|5|S
+guarded|WO|Sawmill|5|NW
+guarded|WO|Woesong Bridge|5|S
+guarded|WO|Nilfgaardian Garrison|5|E
+guarded|WO|Mill|7|
+guarded|V|Heatherton|19|NE
+guarded|V|Blackbough|5|W
+guarded|V|Hangman's Alley|9|S
+guarded|V|Midcopse|15|NW
+guarded|V|Coast of Wrecks|5|NW
+guarded|V|Dragonslayers' Grotto|12|W
+guarded|V|Lurtch|13|N
+guarded|V|Oxenfurt|9|S
+guarded|V|Ruined Tower|8|E
+guarded|V|Kimbolt Way|24|E
+guarded|V|Inn at the Crossroads|15|NW
+guarded|V|Midcopse|9|S
+guarded|V|Olena's Grove|13|W
+guarded|V|Destroyed Bastion|14|N
+guarded|V|Arette|8|NE
+guarded|V|Cavern|4|N
+guarded|V|Yantra|4|SW
+guarded|S|Crossroads|5|W
+guarded|S|Kaer Trolde Harbor||SW
+guarded|S|Harviken||NW
+guarded|S|Fornhala|19|NE
+guarded|S|Lofoten|15|N
+guarded|S|Gedyneith|27|E
+guarded|S|Elverum Lighthouse|19|
+guarded|S|Blandare|23|N
+guarded|S|Harviken|18|FAR
+guarded|S|Harviken|13|FAR
+guarded|S|Gull Point|21|FAR
+guarded|S|Wild Shore|21|
+guarded|S|Fyresdal|19|S
+guarded|S|Marlin Coast|19|NW
+guarded|S|Urialla Harbor|16|FAR
+guarded|S|Bay of Winds|32|FAR
+guarded|S|Bay of Winds|19|FAR
+guarded|S|Bay of Winds|18|FAR
+guarded|S|Bay of Winds|16|FAR
+guarded|S|Bay of Winds|18|FAR
+guarded|S|Bay of Winds|18|FAR
+guarded|S|Rogne|30|N
+monsternest|WO|Crossroads|5|E
+monsternest|WO|Cackler Bridge|5|NE
+monsternest|WO|Mill|5|N
+monsternest|V|Crow's Perch|9|NW
+monsternest|V|Crow's Perch|9|NE
+monsternest|V|Midcopse|5|UG
+monsternest|V|Midcopse|5|UG
+monsternest|V|Devil's Pit|5|SE
+monsternest|V|Ferry Station|9|
+monsternest|V|Ferry Station|9|
+monsternest|V|Benek|9|W
+monsternest|V|Benek|9|W
+monsternest|V|Benek|9|W
+monsternest|V|Benek|9|W
+monsternest|V|The Orphans of Crookback Bog|9|W
+monsternest|V|Inn at the Crossroads|5|N
+monsternest|V|Codgers' Quarry|6|N
+monsternest|V|Hindhold|6|
+monsternest|V|Hindhold|6|E
+monsternest|V|Olena's Grove|5|NE
+monsternest|V|Toderas|5|W
+monsternest|V|Toderas|5|W
+monsternest|V|Boatmakers' Hut|9|
+monsternest|V|Ursten|9|NE
+monsternest|V|Ursten|9|NE
+monsternest|V|Drahim Castle|6|SE
+monsternest|S|Crossroads|19|SW
+monsternest|S|Crossroads|14|S
+monsternest|S|Ruined Inn|19|
+monsternest|S|Fyresdal|13|W
+monsternest|S|Bay of Winds|13|N
