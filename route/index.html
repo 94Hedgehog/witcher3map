@@ -34,9 +34,12 @@
         <span id="nextname" class="nname">—</span>
         <span id="nextlvl" class="nlvl"></span>
       </button>
+      <div id="warn" role="alert" hidden></div>
       <nav id="tabs" role="tablist">
         <button role="tab" data-tab="route" aria-selected="true">Poradie</button>
+        <button role="tab" data-tab="plan" aria-selected="false">Teraz</button>
         <button role="tab" data-tab="dec" aria-selected="false">Rozhodnutia</button>
+        <button role="tab" data-tab="gwent" aria-selected="false">Zbierky</button>
         <button role="tab" data-tab="layers" aria-selected="false">Mapa</button>
       </nav>
     </header>
@@ -54,10 +57,14 @@
       <ol id="route"></ol>
     </div>
 
+    <div id="tab-plan" class="tab" role="tabpanel" hidden></div>
+
     <div id="tab-dec" class="tab" role="tabpanel" hidden>
       <div id="world"></div>
       <div id="declist"></div>
     </div>
+
+    <div id="tab-gwent" class="tab" role="tabpanel" hidden></div>
 
     <div id="tab-layers" class="tab" role="tabpanel" hidden>
       <div class="lbtns">
@@ -74,12 +81,12 @@
       </div>
       <label class="lhide"><input type="checkbox" id="f-hidemk"> Skryť hotové markery</label>
       <ul id="layers"></ul>
-      <p class="hint">Klik na marker otvorí detail. Pravý klik (na mobile dlhé podržanie) ho označí ako hotový.</p>
+      <p class="hint">Klik na marker otvorí detail. Pravý klik (na mobile dlhé podržanie) ho označí ako hotový. Pravý klik na prázdne miesto mapy pridá <b>vlastný pin</b> s poznámkou.</p>
       <div class="backup">
         <button type="button" id="exportbtn">Stiahnuť zálohu postupu</button>
         <label class="filebtn">Načítať zálohu<input type="file" id="importfile" accept="application/json"></label>
       </div>
-      <p class="credits">Levely otáznikov: game-checklists.com (spárované cez signposty). Mapa a markery: <a href="https://github.com/tiva85/witcher3map" target="_blank" rel="noopener">tiva85/witcher3map</a> (untamed0, BaHTsIzBEdEvi), CC BY-NC-SA 4.0. Poradie questov: Witcher 3 Optimal Quest Order Guide (ChrisRi, xLetalis). Hra a grafika © CD PROJEKT RED.</p>
+      <p class="credits">Gwint: karty a zdroje z Gwent Cards hárku XLSX. Levely otáznikov: game-checklists.com (spárované cez signposty). Mapa a markery: <a href="https://github.com/tiva85/witcher3map" target="_blank" rel="noopener">tiva85/witcher3map</a> (untamed0, BaHTsIzBEdEvi), CC BY-NC-SA 4.0. Poradie questov: Witcher 3 Optimal Quest Order Guide (ChrisRi, xLetalis). Hra a grafika © CD PROJEKT RED.</p>
     </div>
   </aside>
 </div>

@@ -187,3 +187,90 @@ body:not(.spoilers) .sp.show{filter:none}
 .lvleg .lv{margin:0 4px 0 8px}.lvleg .lv:first-child{margin-left:0}
 .lvf{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13.5px}
 .lvf input{accent-color:var(--main)}
+
+/* gwent */
+#tab-gwent{padding-bottom:40px}
+.gwhead{padding:16px 18px;border-bottom:1px solid var(--line)}
+.gwhead h2{font:700 20px/1.1 var(--serif);margin:0 0 10px}
+.gwprog{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--muted);margin-bottom:8px}
+.linkbtn{background:none;border:0;padding:0;color:var(--main);cursor:pointer;font-size:inherit;border-bottom:1px dotted var(--main)}
+.gwg{border-top:1px solid var(--line);padding:10px 0}
+.gwgh{display:flex;align-items:baseline;gap:10px}
+.gwgo{background:none;border:0;padding:0;text-align:left;cursor:pointer;font:600 16px/1.25 var(--serif);color:var(--parch)}
+.gwgo span{font:500 12px var(--sans);color:var(--main);white-space:nowrap}
+.gwgo:hover{color:var(--main)}
+.gwgn{font:600 16px/1.25 var(--serif)}
+.gwc{margin-left:auto;font-size:12.5px;color:var(--muted);white-space:nowrap}
+.gwl{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.gwl label{display:flex;gap:8px;align-items:flex-start;font-size:14px;cursor:pointer;padding:2px 4px;border-radius:4px}
+.gwl label:hover{background:rgba(255,255,255,.04)}
+.gwl input{accent-color:var(--main);margin-top:4px}
+.gwl input:checked+span .gwn{color:var(--dim);text-decoration:line-through}
+.gwf{font-size:11.5px;color:var(--muted)}
+.gwf[data-f="Northern Realms"]{color:#8fb0de}.gwf[data-f="Nilfgaard"]{color:#d6a940}.gwf[data-f="Scoia'tael"]{color:#7fc29a}
+.gwf[data-f="Monsters"]{color:#d98a8a}.gwf[data-f="Skellige"]{color:#b49ad8}.gwf[data-f="Neutral"]{color:var(--muted)}
+.gwo{display:block;font-size:12px;color:var(--dim)}
+.leaflet-popup .gwl label{font-size:13.5px}
+.lv.gwb{background:#e2b54a}.lv.gwb.gwdone{background:#7fc29a}
+.mypin i{display:block;width:16px;height:16px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#e86fb0;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.6)}
+.mypin.legend{display:inline-flex;width:20px;justify-content:center}
+.mypin.legend i{width:12px;height:12px}
+#tabs button{padding-left:2px;padding-right:2px}
+
+/* quest level colors */
+.qlv.lv-ok{color:#7fc29a}.qlv.lv-a{color:#e2b54a}.qlv.lv-r{color:#ff8a8c}.qlv.lv-g{color:#8f8a7f;text-decoration:line-through dotted}
+.lv-okx{color:#7fc29a}.lv-ax{color:#e2b54a}.lv-rx{color:#ff8a8c}.lv-gx{color:#8f8a7f}
+/* deadline banner */
+#warn{margin:0 0 12px;padding:9px 12px;border:1px solid rgba(201,57,60,.7);background:rgba(155,34,38,.16);border-radius:6px;font-size:13.5px;line-height:1.45}
+#warn b{color:#ffb3b4}
+#warn .wq{background:none;border:0;padding:0;color:var(--parch);cursor:pointer;border-bottom:1px dotted var(--parch);font-size:inherit}
+#warn .wq:hover{color:var(--main)}
+/* planner */
+.planhead{padding:16px 18px 6px;border-bottom:1px solid var(--line)}
+.planhead h2{font:700 20px/1.1 var(--serif);margin:0 0 8px}
+.prow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;align-items:center}
+#plansp{flex:1;min-width:180px;background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:7px 8px}
+#planpick,.pclr{background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:7px 10px;cursor:pointer;font-size:13.5px}
+#planpick.on{border-color:var(--main);color:var(--main)}
+.pgo{background:var(--main);color:#1d2124;border:0;border-radius:6px;padding:8px 14px;font-weight:700;cursor:pointer}
+.pgo:hover{filter:brightness(1.08)}
+#planlist{list-style:none;margin:0;padding:6px 0 40px}
+.pit{display:flex;gap:10px;align-items:flex-start;padding:7px 18px}
+.pit:hover{background:rgba(255,255,255,.03)}
+.pnum{flex:none;width:22px;height:22px;border-radius:50%;background:var(--main);color:#1d2124;font:700 12px/22px var(--sans);text-align:center;margin-top:1px}
+.pit.done .pnum{background:var(--line);color:var(--muted)}
+.pit.done .pgo2{color:var(--dim);text-decoration:line-through}
+.pmain{flex:1;min-width:0}
+.pgo2{background:none;border:0;padding:0;text-align:left;cursor:pointer;font:500 16px/1.25 var(--serif);color:var(--parch)}
+.pgo2:hover{color:var(--main)}
+.pmeta{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.pmeta .lv{font-size:11px}
+.pdone{flex:none;background:var(--slate2);border:1px solid var(--line);border-radius:6px;width:30px;height:28px;cursor:pointer;color:var(--muted)}
+.pdone[aria-pressed=true]{border-color:#7fc29a;color:#7fc29a}
+.pempty{padding:14px 18px;color:var(--muted);font-size:13.5px}
+.pnumi{display:flex!important;align-items:center;justify-content:center;border-radius:50%;background:#d6a940;color:#1d2124;font:700 11px var(--sans);box-shadow:0 0 0 2px rgba(0,0,0,.6)}
+.pnumi.done{background:#6f6a5f;color:#ddd}
+.pnumi.start{background:#1d2124;color:#d6a940;box-shadow:0 0 0 2px #d6a940;font-size:13px}
+#tabs button{font-size:14px}
+
+/* collections */
+.seg{display:flex;gap:4px;padding:12px 18px 0}
+.seg button{flex:1;background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:6px 4px;cursor:pointer;font-size:13.5px;color:var(--muted)}
+.seg button[aria-pressed=true]{border-color:var(--main);color:var(--parch)}
+.gwwarn{margin:4px 0 2px;font-size:12.5px;color:#ff9d9f}
+.gwwarn.inroute{margin:6px 0 2px;padding:6px 10px;border:1px solid rgba(214,169,64,.55);border-radius:6px;background:rgba(214,169,64,.08);color:#f0cd78}
+.gwseal{border-color:rgba(214,169,64,.55);background:rgba(214,169,64,.07)}
+.wax.gw{background:radial-gradient(circle at 35% 35%,#f0cd78,#b4882b 60%)}
+.gwseal .gwl{margin-top:0}
+.lv.popb{background:#6ea8ff;color:#0e1a2b}
+.gearrec{margin:8px 0 0;font-size:14px;line-height:1.6}
+.gearl{list-style:none;margin:6px 0 0;padding:0}
+.gearl li{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:start;padding:5px 0;border-top:1px solid var(--line)}
+.gearl li:first-child{border-top:0}
+.gearl .pmeta{grid-column:2}
+.gearl li.done .gearq,.gearl li.done .popgo{color:var(--dim);text-decoration:line-through}
+.gearl .linkbtn{color:var(--parch);font:500 15px/1.3 var(--serif);text-align:left;border-bottom:0}
+.gearl .linkbtn:hover{color:var(--main)}
+.gnode{width:18px;height:18px;border-radius:50%;border:2px solid var(--main);background:none;cursor:pointer;margin-top:2px;padding:0}
+.gnode.on{background:var(--main)}
+#schoolsel{background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:7px 8px;min-width:200px}
