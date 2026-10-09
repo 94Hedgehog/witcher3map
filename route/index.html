@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Witcher 3 – mapa a cesta</title>
+<link rel="icon" href="../files/images/icons/witcher3.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+  <section id="mapwrap" aria-label="Mapa">
+    <div id="map"></div>
+    <div id="mapbar">
+      <label class="sr" for="mapsel">Mapa</label>
+      <select id="mapsel"></select>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </section>
+
+  <aside id="panel" aria-label="Cesta a rozhodnutia">
+    <header id="phead">
+      <div class="ptitle">
+        <h1>Cesta</h1>
+        <label class="mylvl" title="Tvoj aktuálny level – podľa neho sa farbia otázniky">Môj level<input id="mylvl" type="number" min="1" max="100" inputmode="numeric" placeholder="–"></label>
+        <div id="progress" title="Hotové questy"><span id="pcount">0 / 0</span><div class="pbar"><i id="pfill"></i></div></div>
+      </div>
+      <button id="nextbtn" class="next" type="button">
+        <span class="nlab">Ďalej</span>
+        <span id="nextname" class="nname">—</span>
+        <span id="nextlvl" class="nlvl"></span>
+      </button>
+      <nav id="tabs" role="tablist">
+        <button role="tab" data-tab="route" aria-selected="true">Poradie</button>
+        <button role="tab" data-tab="dec" aria-selected="false">Rozhodnutia</button>
+        <button role="tab" data-tab="layers" aria-selected="false">Mapa</button>
+      </nav>
+    </header>
+
+    <div id="tab-route" class="tab" role="tabpanel">
+      <div id="filters">
+        <input id="search" type="search" placeholder="Hľadať quest…" autocomplete="off">
+        <div id="typechips" class="chips"></div>
+        <div class="toggles">
+          <label><input type="checkbox" id="f-hidedone"> Skryť hotové</label>
+          <label><input type="checkbox" id="f-deadline"> Len s deadlinom</label>
+          <label><input type="checkbox" id="f-spoil"> Spoilery</label>
+        </div>
+      </div>
+      <ol id="route"></ol>
+    </div>
+
+    <div id="tab-dec" class="tab" role="tabpanel" hidden>
+      <div id="world"></div>
+      <div id="declist"></div>
+    </div>
+
+    <div id="tab-layers" class="tab" role="tabpanel" hidden>
+      <div class="lbtns">
+        <button type="button" data-preset="explore">Otázniky a questy</button>
+        <button type="button" data-preset="all">Všetko</button>
+        <button type="button" data-preset="none">Nič</button>
+      </div>
+      <div class="lvbox">
+        <p class="lvleg"><b class="lv lv-ok">12</b> v pohode <b class="lv lv-a">15</b> o 1–4 vyššie <b class="lv lv-r">20</b> o 5+ vyššie <b class="lv lv-g">4</b> málo XP <b class="lv lv-n zone">32+</b> orientačne podľa oblasti</p>
+        <div class="lvf">
+          <label><input type="radio" name="lvf" value="all"> Všetky otázniky</label>
+          <label><input type="radio" name="lvf" value="near"> Len do môjho levelu +2</label>
+        </div>
+      </div>
+      <label class="lhide"><input type="checkbox" id="f-hidemk"> Skryť hotové markery</label>
+      <ul id="layers"></ul>
+      <p class="hint">Klik na marker otvorí detail. Pravý klik (na mobile dlhé podržanie) ho označí ako hotový.</p>
+      <div class="backup">
+        <button type="button" id="exportbtn">Stiahnuť zálohu postupu</button>
+        <label class="filebtn">Načítať zálohu<input type="file" id="importfile" accept="application/json"></label>
+      </div>
+      <p class="credits">Levely otáznikov: game-checklists.com (spárované cez signposty). Mapa a markery: <a href="https://github.com/tiva85/witcher3map" target="_blank" rel="noopener">tiva85/witcher3map</a> (untamed0, BaHTsIzBEdEvi), CC BY-NC-SA 4.0. Poradie questov: Witcher 3 Optimal Quest Order Guide (ChrisRi, xLetalis). Hra a grafika © CD PROJEKT RED.</p>
+    </div>
+  </aside>
+</div>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+abandoned|WO|Sawmill|5|W
+abandoned|WO|Abandoned Village|5|E
+abandoned|V|Hangman's Alley|9|W
+abandoned|V|Refugees' Camp|5|
+abandoned|V|Lindenvale|6|E
+abandoned|V|Lurtch|5|N
+abandoned|V|Stonecutters' Settlement|9|
+abandoned|V|Ferry Station|4|SE
+abandoned|V|Condyle|9|N
+abandoned|V|Byways|9|S
+abandoned|V|Olena's Grove|11|
+abandoned|V|Boatmakers' Hut|9|
+abandoned|V|Crane Cape|9|FAR
+abandoned|S|Sund|14|S
+abandoned|S|Ruined Inn|19|
+abandoned|S|Lurthen|15|
+abandoned|S|Isolated Hut|15|
+abandoned|S|Rannvaig|18|NE
