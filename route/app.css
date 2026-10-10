@@ -274,3 +274,11 @@ body:not(.spoilers) .sp.show{filter:none}
 .gnode{width:18px;height:18px;border-radius:50%;border:2px solid var(--main);background:none;cursor:pointer;margin-top:2px;padding:0}
 .gnode.on{background:var(--main)}
 #schoolsel{background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:7px 8px;min-width:200px}
+
+.pmode{padding:0;margin:8px 0}
+.nql{font-size:13px;color:var(--muted)}
+#plann{background:var(--slate2);border:1px solid var(--line);border-radius:6px;padding:4px 6px;margin-left:6px}
+.pit.pstop{background:rgba(214,169,64,.08);border-left:3px solid var(--main);padding-left:15px}
+.pit.pstop .pnum{border-radius:4px;background:var(--parch)}
+.pit.pstop .pgo2{font-weight:700}
+.pnumi.pq{background:#e8dfcb;border-radius:5px;font-size:12px}

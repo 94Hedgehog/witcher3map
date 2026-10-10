@@ -348,29 +348,92 @@ const PLAN={start:null,items:[],layer:null,pick:false};
 const RADII={s:{n:'Blízko',k:1.6},m:{n:'Okolie',k:2.8},l:{n:'Široko',k:4.5}};
 function renderPlanForm(){
   const sp=((markerCache[S.map]&&markerCache[S.map].signpost)||[]).map((m,i)=>({i,n:m[2].replace('*','')})).sort((a,b)=>a.n.localeCompare(b.n));
-  const r=store.get('planR','m'), inc=store.get('planInc',{q:1,poi:1,pop:1,gw:1});
-  const startTxt = PLAN.start ? (PLAN.start.name||'bod na mape') : 'nevybrané';
+  const r=store.get('planR','m'), inc=store.get('planInc',{q:1,poi:1,pop:1,gw:1}), mode=store.get('planMode','route'), nq=store.get('planN',5);
+  const startTxt = PLAN.start ? (PLAN.start.name||'bod na mape') : (mode==='route'?'miesto prvého questu':'nevybrané');
   let h='<div class="planhead"><h2>Čo spravím teraz</h2>'+
-    '<p class="hint">Vyber signpost, kde práve si (alebo bod na mape). Appka nájde v okolí všetko, čo sa ti oplatí pri tvojom leveli'+(S.lvl==null?' – <b>zadaj level v hlavičke</b>, inak berie všetko':' ('+S.lvl+')')+', a zoradí to do trasy.</p>'+
+    '<div class="prow seg pmode">'+[['route','Podľa poradia'],['area','Okolie bodu']].map(([k,n])=>'<button type="button" data-pmode="'+k+'" aria-pressed="'+(mode===k)+'">'+n+'</button>').join('')+'</div>'+
+    (mode==='route'
+      ? '<p class="hint">Vezme najbližšie questy z poradia ako pevné zastávky v ich poradí a medzi ne vloží otázniky, Places of Power a gwint, ktoré ležia po ceste'+(S.lvl==null?' (<b>zadaj level v hlavičke</b>, inak berie všetky otázniky)':' (do levelu '+(S.lvl+2)+')')+'. Štart je voliteľný.</p>'+
+        '<div class="prow"><label class="nql">Questov dopredu <select id="plann">'+[3,5,8,12].map(n=>'<option'+(n===nq?' selected':'')+'>'+n+'</option>').join('')+'</select></label></div>'
+      : '<p class="hint">Vyber signpost, kde práve si (alebo bod na mape). Appka nájde v okolí všetko, čo sa ti oplatí pri tvojom leveli'+(S.lvl==null?' – <b>zadaj level v hlavičke</b>, inak berie všetko':' ('+S.lvl+')')+', a zoradí to do trasy.</p>')+
     '<div class="prow"><select id="plansp"><option value="">— signpost na mape '+esc(CFG.maps[S.map].name)+' —</option>'+sp.map(x=>'<option value="'+x.i+'"'+(PLAN.start&&PLAN.start.sp===x.i?' selected':'')+'>'+esc(x.n)+'</option>').join('')+'</select>'+
     '<button type="button" id="planpick" class="'+(PLAN.pick?'on':'')+'">'+(PLAN.pick?'Klikni na mapu…':'Bod na mape')+'</button></div>'+
-    '<div class="prow chips">'+Object.entries(RADII).map(([k,v])=>'<button type="button" class="chip prad" data-r="'+k+'" aria-pressed="'+(r===k)+'" style="--c:var(--main)"><i></i>'+v.n+'</button>').join('')+'</div>'+
-    '<div class="prow toggles">'+[['q','Questy'],['poi','Otázniky'],['pop','Places of Power'],['gw','Gwint']].map(([k,n])=>'<label><input type="checkbox" class="pinc" data-k="'+k+'"'+(inc[k]?' checked':'')+'> '+n+'</label>').join('')+'</div>'+
+    '<div class="prow chips">'+(mode==='route'?'<span class="nql">Odbočky:</span>':'')+Object.entries(RADII).map(([k,v])=>'<button type="button" class="chip prad" data-r="'+k+'" aria-pressed="'+(r===k)+'" style="--c:var(--main)"><i></i>'+(mode==='route'?{s:'malé',m:'stredné',l:'veľké'}[k]:v.n)+'</button>').join('')+'</div>'+
+    '<div class="prow toggles">'+(mode==='route'?[]:[['q','Questy']]).concat([['poi','Otázniky'],['pop','Places of Power'],['gw','Gwint']]).map(([k,n])=>'<label><input type="checkbox" class="pinc" data-k="'+k+'"'+(inc[k]?' checked':'')+'> '+n+'</label>').join('')+'</div>'+
     '<div class="prow"><button type="button" id="plango" class="pgo">Naplánovať trasu</button>'+(PLAN.items.length?'<button type="button" id="planclr" class="pclr">Zrušiť</button>':'')+'</div>'+
     '<p class="hint">Štart: <b>'+esc(startTxt)+'</b></p></div><ol id="planlist">'+planListHtml()+'</ol>';
   $('#tab-plan').innerHTML=h;
 }
 function planItemDone(it){ return it.kind==='quest' ? S.done.has(it.qid) : it.kind==='gwv' ? gwLeft(it.gid)===0 : S.mk.has(it.key); }
 function planListHtml(){
-  if(!PLAN.items.length) return PLAN.ran?'<li class="pempty">V okolí nie je nič, čo by sa oplatilo. Skús väčší okruh alebo iný signpost.</li>':'';
+  if(!PLAN.items.length) return PLAN.ran?'<li class="pempty">'+(store.get('planMode','route')==='route'?'V poradí už nie sú žiadne questy.':'V okolí nie je nič, čo by sa oplatilo. Skús väčší okruh alebo iný signpost.')+'</li>':'';
   return PLAN.items.map((it,n)=>{
     const d=planItemDone(it);
-    return '<li class="pit'+(d?' done':'')+'" data-n="'+n+'"><span class="pnum">'+(n+1)+'</span>'+
+    return '<li class="pit'+(d?' done':'')+(it.stop?' pstop':'')+'" data-n="'+n+'"><span class="pnum">'+(it.stop?'Q':(n+1))+'</span>'+
       '<span class="pmain"><button type="button" class="pgo2">'+esc(it.name)+'</button><span class="pmeta">'+it.meta+'</span></span>'+
       (it.kind!=='gwv'?'<button type="button" class="pdone" aria-pressed="'+d+'" title="Označiť ako hotové">✓</button>':'')+'</li>';
   }).join('');
 }
+function poiCandidates(mp,inc){
+  const data=markerCache[mp], ok=lv=>{ const n=lvNum(lv); return S.lvl==null || n==null || n<=S.lvl+2; }, out=[];
+  const addCat=(cat,flagOk)=>{ (data[cat]||[]).forEach((m,i)=>{
+      const key=mkKey(mp,cat,m[0],m[1]); if(S.mk.has(key) || !flagOk(m)) return;
+      const lv=m[4]; out.push({kind:'mk',key,cat,i,name:CFG.catNames[cat]||cat,lat:m[0],lng:m[1],
+        meta:(lv!=null?'<span class="lv '+lvClass(lv)+(typeof lv==='number'?'':' zone')+'">'+(typeof lv==='number'?lv:ZONE[lv].t)+'</span> ':'')+(cat==='pop'?'<span class="lv popb">+1</span> skill point ':'')+esc(m[2]!==(CFG.catNames[cat]||cat)?m[2]:'')}); }); };
+  if(inc.poi){ ['guarded','monsternest','monsterden','banditcamp','abandoned','pid'].forEach(c=>addCat(c,m=>ok(m[4]))); ['hidden','smugglers','spoils','vineyardinfestation'].forEach(c=>addCat(c,()=>true)); }
+  if(inc.pop) addCat('pop',()=>true);
+  if(inc.gw){ addCat('gwent',()=>true);
+    Object.entries(GW.groups).forEach(([gid,g])=>{ if(g.map===mp && g.lat!=null && gwLeft(gid)>0) out.push({kind:'gwv',gid,name:g.n,lat:g.lat,lng:g.lng,cat:'gwentshop',meta:'Gwint – chýba '+gwLeft(gid)+' kariet'}); }); }
+  return out;
+}
+function runRoutePlan(){
+  if(PLAN.start && PLAN.start.auto) PLAN.start=null;
+  const mp=S.map, data=markerCache[mp], r=store.get('planR','m'), inc=store.get('planInc',{q:1,poi:1,pop:1,gw:1}), N=store.get('planN',5);
+  const W=spScale(mp)*{s:.6,m:1.1,l:1.8}[r];
+  const cur=currentQuest(); if(!cur){ PLAN.items=[]; PLAN.ran=true; renderPlanForm(); return; }
+  const ci=QUESTS.indexOf(cur);
+  const next=QUESTS.slice(ci).filter(q=>!S.done.has(qid(q))).slice(0,N);
+  // quest stops with location on this map (or none)
+  const stops=next.map(q=>{
+    const t=TYPES[q.type]||TYPES.other;
+    const here=(q.mk||[]).find(([m0,cat,i])=>m0===mp && data[cat] && data[cat][i]);
+    const other=!here && (q.mk||[]).length ? q.mk[0][0] : null;
+    const st={kind:'quest',stop:true,qid:qid(q),name:q.name,cat:here?here[1]:null,i:here?here[2]:null,
+      meta:'<span class="tag" style="--c:'+t.c+'">'+t.n+'</span>'+(q.level!=null?' · <span class="'+lvClass(q.level)+'x">úr. '+q.level+'</span>':'')+
+        (here?'':other?' · <span class="dl">na mape '+esc(CFG.maps[other].name)+'</span>':' · bez pinu – pokračuj v deji')+(q.until?' · <span class="dl">do: '+esc(q.until.join(', '))+'</span>':'')};
+    if(here){ const d=data[here[1]][here[2]]; st.lat=d[0]; st.lng=d[1]; }
+    return st;
+  });
+  // path anchors
+  let anchors=[]; if(PLAN.start) anchors.push(proj(mp,PLAN.start.lat,PLAN.start.lng));
+  const located=stops.filter(s2=>s2.lat!=null);
+  if(!PLAN.start && located.length) PLAN.start={lat:located[0].lat,lng:located[0].lng,name:'pri queste '+located[0].name,map:mp,auto:true};
+  if(!anchors.length && PLAN.start) anchors.push(proj(mp,PLAN.start.lat,PLAN.start.lng));
+  // segments between consecutive located stops
+  const P=[...anchors]; const segOwner=[]; // segOwner[k] = index in stops after which fillers of segment k go (-1 = before first)
+  let lastStopIdx=-1;
+  stops.forEach((st,k)=>{ if(st.lat!=null){ P.push(proj(mp,st.lat,st.lng)); segOwner.push(lastStopIdx); lastStopIdx=k; } });
+  const fill=stops.map(()=>[]), pre=[];
+  if(P.length){
+    const segs=[]; for(let k=0;k+1<P.length;k++) segs.push([P[k],P[k+1],segOwner[k]]);
+    if(!segs.length) segs.push([P[0],P[0],-1]);
+    poiCandidates(mp,inc).forEach(c=>{
+      const p=proj(mp,c.lat,c.lng); let best=null;
+      segs.forEach(([a,b,own])=>{ const dx=b[0]-a[0],dy=b[1]-a[1],L2=dx*dx+dy*dy; let t=L2?((p[0]-a[0])*dx+(p[1]-a[1])*dy)/L2:0; t=Math.max(0,Math.min(1,t));
+        const d=Math.hypot(p[0]-(a[0]+t*dx),p[1]-(a[1]+t*dy)); if(d<=W && (!best||d<best.d)) best={d,t,own}; });
+      if(best){ c.t=best.t; (best.own<0?pre:fill[best.own]).push(c); }
+    });
+  }
+  const items=[]; pre.sort((a,b)=>a.t-b.t).forEach(c=>items.push(c));
+  stops.forEach((st,k)=>{ items.push(st); fill[k].sort((a,b)=>a.t-b.t).forEach(c=>items.push(c)); });
+  // fillers assigned to a segment are placed after the stop that starts the segment: fix ownership so they come before the NEXT stop
+  PLAN.items=items; PLAN.ran=true;
+  drawPlan(); renderPlanForm();
+  const need=new Set(PLAN.items.filter(it=>it.cat).map(it=>it.cat)); let ch=false; need.forEach(c=>{ if(!S.cats.includes(c)){S.cats.push(c);ch=true;} }); if(ch){ save(); applyLayers(); renderLayers(); }
+}
 function runPlan(){
+  if(store.get('planMode','route')==='route'){ runRoutePlan(); return; }
+  if(PLAN.start && PLAN.start.auto) PLAN.start=null;
   if(!PLAN.start){ toast('Najprv vyber signpost alebo bod na mape.'); return; }
   const mp=S.map, data=markerCache[mp], r=store.get('planR','m'), inc=store.get('planInc',{q:1,poi:1,pop:1,gw:1});
   const R=spScale(mp)*RADII[r].k, s0=proj(mp,PLAN.start.lat,PLAN.start.lng);
@@ -417,17 +480,18 @@ function runPlan(){
 function drawPlan(){
   if(PLAN.layer){ map.removeLayer(PLAN.layer); PLAN.layer=null; }
   if(!PLAN.start) return;
-  const pts=[[PLAN.start.lat,PLAN.start.lng]].concat(PLAN.items.map(it=>[it.lat,it.lng]));
+  const pts=[[PLAN.start.lat,PLAN.start.lng]].concat(PLAN.items.filter(it=>it.lat!=null).map(it=>[it.lat,it.lng]));
   const g=L.layerGroup();
   if(pts.length>1) L.polyline(pts,{color:'#d6a940',weight:3,opacity:.85,dashArray:'6 6',interactive:false}).addTo(g);
   L.marker(pts[0],{icon:L.divIcon({className:'pnumi start',iconSize:[22,22],iconAnchor:[11,11],html:'★'}),interactive:false,zIndexOffset:900}).addTo(g);
-  PLAN.items.forEach((it,n)=>L.marker([it.lat,it.lng],{icon:L.divIcon({className:'pnumi'+(planItemDone(it)?' done':''),iconSize:[20,20],iconAnchor:[10,-6],html:String(n+1)}),interactive:false,zIndexOffset:900}).addTo(g));
+  PLAN.items.forEach((it,n)=>{ if(it.lat==null) return; L.marker([it.lat,it.lng],{icon:L.divIcon({className:'pnumi'+(it.stop?' pq':'')+(planItemDone(it)?' done':''),iconSize:it.stop?[24,24]:[20,20],iconAnchor:it.stop?[12,-6]:[10,-6],html:it.stop?'Q':String(n+1)}),interactive:false,zIndexOffset:it.stop?950:900}).addTo(g); });
   PLAN.layer=g.addTo(map);
   if(pts.length>1) map.flyToBounds(L.latLngBounds(pts).pad(.2),{maxZoom:CFG.maps[S.map].maxZoom-1,duration:.7});
 }
 function drawPlanKeepView(){ if(PLAN.layer){ map.removeLayer(PLAN.layer); PLAN.layer=null; } const c=map.getCenter(), z=map.getZoom(); drawPlan(); map.stop(); map.setView(c,z,{animate:false}); }
 function clearPlan(){ PLAN.items=[]; PLAN.ran=false; PLAN.start=null; if(PLAN.layer&&map){ map.removeLayer(PLAN.layer); } PLAN.layer=null; }
 function openPlanItem(it){
+  if(it.lat==null){ const q=QUESTS.find(x=>qid(x)===it.qid); if(q) focusQuest(q); return; }
   map.flyTo([it.lat,it.lng],Math.max(map.getZoom(),CFG.maps[S.map].maxZoom-1),{duration:.6});
   map.once('moveend',()=>{ const g=layers[it.cat]; if(!g) return; g.eachLayer(mk=>{ const d=mk._w3; if((it.kind==='gwv'&&d.gid===it.gid)||(it.i!=null&&d.cat===it.cat&&d.i===it.i)) mk.openPopup(); }); });
 }
@@ -681,12 +745,14 @@ function bind(){
   $('#tab-plan').addEventListener('change',e=>{
     if(e.target.id==='plansp'){ const v=e.target.value; if(v===''){ return; } const m=markerCache[S.map].signpost[+v];
       PLAN.start={lat:m[0],lng:m[1],name:m[2].replace('*',''),sp:+v,map:S.map}; drawPlan(); renderPlanForm(); }
+    if(e.target.id==='plann'){ store.set('planN',+e.target.value); return; }
     if(e.target.classList.contains('pinc')){ const inc=store.get('planInc',{q:1,poi:1,pop:1,gw:1}); inc[e.target.dataset.k]=e.target.checked?1:0; store.set('planInc',inc); }
   });
   $('#tab-plan').addEventListener('click',e=>{
     const t=e.target;
     if(t.id==='planpick'){ PLAN.pick=!PLAN.pick; renderPlanForm(); if(PLAN.pick) toast('Klikni na mapu, kde práve si.'); return; }
     if(t.id==='plango'){ runPlan(); return; }
+    const pm=t.closest('[data-pmode]'); if(pm){ store.set('planMode',pm.dataset.pmode); if(PLAN.start&&PLAN.start.auto) PLAN.start=null; PLAN.items=[]; PLAN.ran=false; if(PLAN.layer){map.removeLayer(PLAN.layer);PLAN.layer=null;} renderPlanForm(); return; }
     if(t.id==='planclr'){ clearPlan(); renderPlanForm(); return; }
     const rb=t.closest('.prad'); if(rb){ store.set('planR',rb.dataset.r); renderPlanForm(); return; }
     const li=t.closest('.pit'); if(!li) return; const it=PLAN.items[+li.dataset.n];

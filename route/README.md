@@ -18,7 +18,7 @@ V karte **Mapa** sa dá zapnúť *Len do môjho levelu +2* a mapa ukáže iba to
 Hearts of Stone oblasť má orientačne 32+, Toussaint 35+ (presné levely pre DLC otázniky zdroj nemá).
 
 ## Teraz (plánovač session)
-Karta **Teraz**: vyber signpost, kde práve si (alebo *Bod na mape*), okruh a čo chceš robiť, a klikni *Naplánovať trasu*. Appka nájde v okolí questy z poradia, ktoré sú pre tvoj level na rade, otázniky do tvojho levelu +2, Places of Power a gwint (predajcovia a hráči), a zoradí ich do najkratšej trasy. Trasu nakreslí na mapu. Hotové veci odškrtávaš priamo v zozname.
+Karta **Teraz** má dva režimy. **Podľa poradia** (predvolený) vezme najbližších 3–12 questov z poradia ako pevné zastávky (Q) v ich poradí a medzi ne vloží otázniky, Places of Power a gwint, ktoré ležia po ceste; questy mimo poradia nepridáva. **Okolie bodu**: vyber signpost, kde práve si (alebo *Bod na mape*), okruh a čo chceš robiť, a klikni *Naplánovať trasu*. Appka nájde v okolí questy z poradia, ktoré sú pre tvoj level na rade, otázniky do tvojho levelu +2, Places of Power a gwint (predajcovia a hráči), a zoradí ich do najkratšej trasy. Trasu nakreslí na mapu. Hotové veci odškrtávaš priamo v zozname.
 
 ## Varovanie pred zamknutím questov
 Keď sa v poradí blížiš ku questu, po ktorom sa iný nedokončený quest zamkne (napr. The Isle of Mists), pod tlačidlom *Ďalej* sa objaví červený banner so zoznamom, čo treba stihnúť.
